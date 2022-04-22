@@ -71,6 +71,6 @@ Outputs:
     Description: DNS Name of the newly created EC2 instance
   Tags:
     Value: !Join
-    - :
-    - - "HarnessDeployTag"
-      - !Ref 'Tag'
+      - :
+      - - "HarnessDeployTag"
+        - !Ref 'Tag'
