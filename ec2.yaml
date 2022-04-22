@@ -54,8 +54,8 @@ Resources:
       - DeviceName: /dev/sdc
         VirtualName: ephemeral0
       Tags: 
-      - Key: !Ref 'Tag'
-        Value: "HarnessDeployTag"
+      - Key: "HarnessDeployTag"
+        Value: !Ref 'Tag'
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -69,3 +69,5 @@ Outputs:
   Instance:
     Value: !GetAtt [EC2Instance, PublicDnsName]
     Description: DNS Name of the newly created EC2 instance
+  Tags:
+    Value: !Ref 'Tag'
