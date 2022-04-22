@@ -54,8 +54,8 @@ Resources:
       - DeviceName: /dev/sdc
         VirtualName: ephemeral0
       Tags: 
-      - Key: "HarnessTag"
-        Value: !Ref 'Tag'
+      - Key: !Ref 'Tag'
+        Value: "HarnessDeployTag"
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:

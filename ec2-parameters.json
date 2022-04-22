@@ -2,5 +2,9 @@
     {
         "parameterKey": "KeyName",
         "parameterValue": "suran_cloudformation_ssh_key"
+    },
+    {
+        "parameterKey": "Tag",
+        "parameterValue": "suran_cf_ec2"
     }
 ]
