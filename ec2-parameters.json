@@ -1,6 +1,6 @@
 [
     {
         "parameterKey": "KeyName",
-        "parameterValue": "terraform_example_ec2_key"
+        "parameterValue": "suran_cloudformation_ssh_key"
     }
 ]
