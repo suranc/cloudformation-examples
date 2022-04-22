@@ -33,6 +33,12 @@ Parameters:
     Default: 0.0.0.0/0
     AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
     ConstraintDescription: must be a valid CIDR range of the form x.x.x.x/x.
+  Tag:
+    Description: Tag to give the EC2 instance
+    Type: String
+    MinLength: '1'
+    MaxLength: '64'
+    Default: 'cf_ec2'
   LatestAmiId:
     Type:  'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
     Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
@@ -47,6 +53,8 @@ Resources:
       BlockDeviceMappings:
       - DeviceName: /dev/sdc
         VirtualName: ephemeral0
+      Tags: 
+      - !Ref 'Tag'
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
