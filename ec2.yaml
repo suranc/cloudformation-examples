@@ -70,4 +70,7 @@ Outputs:
     Value: !GetAtt [EC2Instance, PublicDnsName]
     Description: DNS Name of the newly created EC2 instance
   Tags:
-    Value: !Ref 'Tag'
+    Value: !Join
+    - :
+    - - "HarnessDeployTag"
+      - !Ref 'Tag'
